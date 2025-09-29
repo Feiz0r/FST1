@@ -1,86 +1,112 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <script src="main.js" defer></script>
- <link rel="stylesheet" href="styles.css">
- <title>Главная - Название вашего сайта</title>
- <meta name="description" content="Краткое описание главной страницы вашего сайта">
- <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная – Название вашего сайта</title>
+    <meta name="description"
+        content="Добро пожаловать на сайт нашей компании. Узнайте больше о нас, наших услугах и свяжитесь с нами.">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
+
 <body>
- <!-- Шапка сайта -->
- <header>
- <a href="/">Логотип или название сайта</a>
- <!-- Главное меню навигации -->
- <nav>
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="about.html">О нас</a></li>
- <li><a href="contacts.html">Контакты</a></li>
- </ul>
- </nav>
- </header>
- <!-- Уникальное основное содержимое страницы -->
- <main>
- <h1>Добро пожаловать на наш сайт!</h1>
- <!-- Секция 1 с якорем -->
- <section id="services">
- <h2>Наши услуги</h2>
- <p>Описание предоставляемых услуг...</p>
- <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
-<!-- Кнопка открытия модалки -->
- <p><button id="openDialog" type="button">Написать нам</button>
-<!-- Модалка с формой -->
-<dialog id="contactDialog" aria-labelledby="dialogTitle">
- <h2 id="dialogTitle">Обратная связь</h2>
- <form id="contactForm" method="dialog" novalidate>
- <label for="name">Имя</label>
- <input id="name" name="name" type="text" required minlength="2"
-autocomplete="given-name">
- <label for="email">E-mail</label>
- <input id="email" name="email" type="email" required
-autocomplete="email">
- <label for="phone">Телефон</label>
- <input id="phone" name="phone" type="tel" inputmode="tel"
-autocomplete="tel"
- aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__"
- required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
- <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
- <label for="date">Дата</label>
- <input id="date" name="date" type="date">
- <label for="topic">Тема</label>
- <select id="topic" name="topic" required>
- <option value="">Выберите тему</option>
- <option>Вопрос</option>
- <option>Заказ</option>
- </select>
- <label for="message">Сообщение</label>
- <textarea id="message" name="message" rows="4" required></textarea>
- <div class="form-actions">
- <button type="button" id="closeDialog">Закрыть</button>
- <button type="submit">Отправить</button>
- </div>
- </form>
-</dialog>
- </section>
- <!-- Секция 2 с якорем -->
- <section id="portfolio">
- <h2>Портфолио</h2>
- <p>Примеры наших работ...</p>
- </section>
- <!-- Секция 3 с якорем -->
- <section id="contacts">
- <h2>Контактная информация</h2>
- <p>Наши контакты...</p>
- <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
- </section>
- </main>
- <!-- Подвал сайта -->
- <footer>
- <p>&copy; 2029 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
- </footer>
+
+    <!-- ШАПКА -->
+    <header class="site-header">
+        <a href="index.html" class="site-header__brand">Название сайта</a>
+        <nav class="site-nav">
+            <ul class="site-nav__list">
+                <li><a href="index.html" class="site-nav__link site-nav__link--active">Главная</a></li>
+                <li><a href="about.html" class="site-nav__link">О нас</a></li>
+                <li><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Добро пожаловать на наш сайт!</h1>
+        <p>Мы предлагаем качественные услуги и всегда открыты для сотрудничества.</p>
+        <button id="openDialog" type="button">Написать нам</button>
+    </section>
+
+    <main>
+        <!-- СЕКЦИЯ: услуги -->
+        <section id="services" class="mt-4">
+            <h2>Наши услуги</h2>
+            <p>Описание предоставляемых услуг...</p>
+            <a href="#contacts">Связаться с нами</a>
+        </section>
+
+        <!-- СЕКЦИЯ: портфолио -->
+        <section id="portfolio" class="mt-4">
+            <h2>Портфолио</h2>
+            <picture>
+                <source srcset="img/portfolio-800.webp" type="image/webp">
+                <img src="img/portfolio-800.jpg" alt="Пример нашей работы" loading="lazy">
+            </picture>
+        </section>
+
+        <!-- Вставка с Rutube; замените XXXXXXXXXXXX на ID ролика -->
+        <div class="media">
+            <iframe src="https://rutube.ru/play/embed/cbd6ce2f7aeabb685e8953865601f6b1" title="Видео о проекте"
+                allow="autoplay; encrypted-media; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+        </div>
+        </div>
+
+        <!-- СЕКЦИЯ: контакты -->
+        <section id="contacts" class="mt-4">
+            <h2>Контактная информация</h2>
+            <p>Телефон: +7 (123) 456-78-90</p>
+            <a href="contacts.html">Подробнее</a>
+        </section>
+    </main>
+
+    <!-- МОДАЛКА -->
+    <dialog id="contactDialog" aria-labelledby="dialogTitle">
+        <h2 id="dialogTitle">Обратная связь</h2>
+        <form id="contactForm" method="dialog" novalidate>
+            <label for="name" class="form__label">Имя</label>
+            <input id="name" name="name" type="text" class="form__input" required minlength="2"
+                autocomplete="given-name">
+
+            <label for="email" class="form__label">E-mail</label>
+            <input id="email" name="email" type="email" class="form__input" required autocomplete="email">
+
+            <label for="phone" class="form__label">Телефон</label>
+            <input id="phone" name="phone" type="tel" class="form__input" placeholder="+7 (___) ___-__-__" required>
+            <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
+
+            <label for="date" class="form__label">Дата</label>
+            <input id="date" name="date" type="date" class="form__input">
+
+            <label for="topic" class="form__label">Тема</label>
+            <select id="topic" name="topic" class="form__select" required>
+                <option value="">Выберите тему</option>
+                <option>Вопрос</option>
+                <option>Заказ</option>
+            </select>
+
+            <label for="message" class="form__label">Сообщение</label>
+            <textarea id="message" name="message" rows="4" class="form__textarea" required></textarea>
+
+            <div class="form-actions mt-3">
+                <button type="button" id="closeDialog">Закрыть</button>
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- ПОДВАЛ -->
+    <footer class="text-center mt-4">
+        <p>&copy; 2029 Название вашего сайта. Все права защищены.</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+    </footer>
+
 </body>
+
 </html>

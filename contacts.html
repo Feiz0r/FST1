@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Главная - Название вашего сайта</title>
- <meta name="description" content="Краткое описание главной страницы вашего сайта">
- <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
- <title>Контакты - Название вашего сайта</title>
- <meta name="description" content="Узнайте больше о нашей компании и истории">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты – Название вашего сайта</title>
+  <meta name="description" content="Свяжитесь с нами удобным способом: телефон, email или форма обратной связи.">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
- <header>
- <a href="/">Логотип или название сайта</a>
- </header>
- <main>
- <!-- Простые "хлебные крошки" -->
- <nav aria-label="Хлебные крошки">
- <a href="index.html">Главная</a> →
- <span>Контакты</span>
- </nav>
- <h1>Контактная информация</h1>
- <section>
- <h2>Наши контакты</h2>
- <p>Текст с набором людей и их контактов...</p>
- </section>
- </main>
- <footer>
- <p>&copy; 2029 Название вашего сайта. Все права защищены.</p>
- <p>Телефон: +7 (123) 456-78-90</p>
- </footer>
+
+  <!-- ШАПКА -->
+  <header class="site-header">
+    <a href="index.html" class="site-header__brand">Название сайта</a>
+    <nav class="site-nav">
+      <ul class="site-nav__list">
+        <li><a href="index.html" class="site-nav__link">Главная</a></li>
+        <li><a href="about.html" class="site-nav__link">О нас</a></li>
+        <li><a href="contacts.html" class="site-nav__link site-nav__link--active">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container mt-4">
+    <h1>Контакты</h1>
+    <p>Вы можете связаться с нами по любому удобному для вас способу:</p>
+    <ul>
+      <li>Телефон: +7 (123) 456-78-90</li>
+      <li>Email: info@example.com</li>
+      <li>Адрес: Москва, ул. Примерная, д. 1</li>
+    </ul>
+
+    <section class="mt-4">
+      <h2>Напишите нам</h2>
+      <button id="openDialog" type="button">Открыть форму</button>
+    </section>
+
+  <!-- МОДАЛКА -->
+  <dialog id="contactDialog" aria-labelledby="dialogTitle">
+    <h2 id="dialogTitle">Обратная связь</h2>
+    <form id="contactForm" method="dialog" novalidate>
+      <label for="name" class="form__label">Имя</label>
+      <input id="name" name="name" type="text" class="form__input" required minlength="2" autocomplete="given-name">
+
+      <label for="email" class="form__label">E-mail</label>
+      <input id="email" name="email" type="email" class="form__input" required autocomplete="email">
+
+      <label for="message" class="form__label">Сообщение</label>
+      <textarea id="message" name="message" rows="4" class="form__textarea" required></textarea>
+
+      <div class="form-actions mt-3">
+        <button type="button" id="closeDialog">Закрыть</button>
+        <button type="submit">Отправить</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ПОДВАЛ -->
+  <footer class="text-center mt-4">
+    <p>&copy; 2029 Название вашего сайта. Все права защищены.</p>
+    <p>Телефон: +7 (123) 456-78-90</p>
+  </footer>
+
 </body>
+</html>
